@@ -8,17 +8,19 @@
     <body>
           <div class="toolbar">
         <h2>MessageApp</h2>
-        <%= link_to "Register", "users/register" %>
     </div>
     
-    <div class="loginForm">   
-        <h1>Login</h1> 
-        <form action="/session" method="POST">
+    <div class="registerForm">   
+        <h1>Register</h1> 
+        <form action="/users" method="POST">
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
             <input type="email" name="login[email]" placeholder="email">
             <input type="password" name="login[password]" placeholder="password">
+            <input type="password" name="login[confirm_password]" placeholder="confirm_password">
             <input type="submit" name="submit" class="submit">
         </form>
+
+        <%= link_to "Back to login", "/" %>
     </div>
 
         
