@@ -1,3 +1,39 @@
+<!DOCTYPE html>
+<html>
 
-<%= params.inspect %>
-<%= link_to "Logout", root_url %>
+    <head>
+        <title>Message App</title>
+    </head>
+
+    <body>
+          <div class="toolbar">
+        <h2>MessageApp</h2>
+        <%= link_to "Logout", "sessions/destroy" %>
+    </div>
+    <div class="errors">
+        <% if flash[:login_errors] %>
+            <% flash[:login_errors].each do |error| %>
+                <p> <%= error %> </p>
+            <%end%>
+        <%end%>
+    </div>
+
+      <%= link_to "Create Room" , "/chat_rooms/new" %>
+    <div class="listOfRooms"> 
+      <h3>Available rooms</h3>  
+
+        <% @rooms.each do |room| %>
+        	<div class="Room">
+        		<%= room.title %>
+        	</div>
+        <% end %>
+     	
+    </div>
+
+        
+    </body>
+  
+    
+    
+
+</html>
