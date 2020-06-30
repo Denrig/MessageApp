@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
-
+    
     <head>
         <title>Message App</title>
-        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     </head>
 
     <body>
     <div class="toolbar">
         <h2>MessageApp</h2>
-        <%= link_to "Logout", "sessions/destroy" %>
     </div>
     
     <div class="errors">
@@ -19,18 +17,20 @@
             <%end%>
         <%end%>
     </div>
-
-      <%= link_to "Create Room" , "/chat_rooms/new" %>
-    <div class="listOfRooms"> 
-      <h3>Available rooms</h3>  
-
-        <% @rooms.each do |room| %>
-        	<div class="Room">
-        	   	<%= link_to room.title , "/chat_rooms/"+room.id.to_s %>
-        	</div>
+   
+    <div class="Messages">
+        
+        <% @messages.each do |message| %>
+            <p> <%= message.message %></p>
         <% end %>
-     	
+
     </div>
+
+    <form class="roomForm" action="/chat_rooms/1", method="POST">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="text" name="message[message]" placeholder="message"/>
+        <input type="submit" name="submit">
+    </form>
 
         
     </body>

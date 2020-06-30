@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Message App</title>
+    </head>
+
+    <body>
+    <div class="toolbar">
+        <h2>MessageApp</h2>
+    </div>
+    
+    <div class="errors">
+        <% if flash[:login_errors] %>
+            <% flash[:login_errors].each do |error| %>
+                <p> <%= error %> </p>
+            <%end%>
+        <%end%>
+    </div>
+   
+    <form class="roomForm" action="/chat_rooms", method="POST">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="text" name="room[title]" placeholder="title"/>
+        <input type="text" name="room[desc]" placeholder="desc">
+        <input type="submit" name="submit" placeholder="submit">
+    </form>
+
+        
+    </body>
+  
+    
+    
+
+</html>
