@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root 'users#index'
   get '/users/register' => 'users#register'
   post '/users' => 'users#create'
-#  post '/sessions' => 'sessions#create'
+  post '/sessions' => 'sessions#create'
+  get '/chat_rooms' => 'chat_rooms#index'
 end
