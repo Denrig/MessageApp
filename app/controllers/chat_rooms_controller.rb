@@ -17,26 +17,10 @@ class ChatRoomsController < ApplicationController
 		end
 	end
 
-	def show
-		@messages= Message.all()		
-	end
-
-	def addMessage
-		message=Message.new(message_params)
-		if message.save
-			redirect_to '/chat_rooms/1'
-		else
-			flash[:register_errors]=message.errors.full_messages
-		end
-	end
 
 	private 
 		def room_params
 			params.require(:room).permit(:title,:desc)
-		end
-
-		def message_params
-			params.require(:message).permit(:body,:user)
 		end
 
 end
