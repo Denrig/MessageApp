@@ -26,7 +26,7 @@
 
         <% @rooms.each do |room| %>
         	<div class="Room">
-        	   	<%= link_to room.title , "/chat_rooms/"+room.id.to_s %>
+        	   	<%= link_to room.title , "/messages/"+room.id.to_s %>
         	</div>
         <% end %>
      	

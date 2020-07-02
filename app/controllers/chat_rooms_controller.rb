@@ -8,6 +8,10 @@ class ChatRoomsController < ApplicationController
 
 	end
 
+	def show
+		@room = params[:id]
+	end
+	
 	def create
 		room=ChatRoom.new(room_params)
 		if room.save

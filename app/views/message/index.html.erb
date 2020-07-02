@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<div id="messageList">
+		<% @messages.each do |message| %>
+			<div class="messageBody">
+			<%= message.body %>
+			<%= message.user.email %>
+			</div>
+		<% end %>
+	</div>
+
+	<%= render("form") %>
+	
+<body>
+</body>
+</html>
