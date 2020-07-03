@@ -1,2 +1,2 @@
-
-$('#messageList').append("fasdasdasd")
+$("#messageList").append("<div class=\"messageBody\"><%= j @message.body %><%= j @message.user.email %></div>")
+$("#messageBody").val("")

@@ -5,6 +5,10 @@ class UsersController < ApplicationController
         
     end
 
+    #REGISTER A NEW USER
+    def register
+
+    end
 
     def create
     		user = User.new(user_params)
@@ -15,12 +19,9 @@ class UsersController < ApplicationController
     		end
     end
     
-    #REGISTER A NEW USER
-    def register
-
-    end
+  
     private
     	def user_params
-    		 params.require(:user).permit(:email,:password)
+    		 params.require(:user).permit(:Email,:Password)
     	end
 end

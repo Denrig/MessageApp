@@ -19,10 +19,10 @@
         <%end%>
     </div>
    
-    <form class="roomForm" action="/chat_rooms", method="POST">
+    <form id="AddRoomForm" class="InputsForm" action="/chat_rooms", method="POST">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input type="text" name="room[title]" placeholder="title"/>
-        <input type="text" name="room[desc]" placeholder="desc">
+        <input type="text" name="room[title]" placeholder="Title"/>
+        <input id="desc" type="text" name="room[desc]" placeholder="Desc">
         <input type="submit" name="submit" placeholder="submit">
     </form>
 

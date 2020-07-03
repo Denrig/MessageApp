@@ -3,6 +3,86 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
-body {
-	background-color : red;
+.listOfRooms{
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ 
+  text-align: center;
+
 }
+
+
+.listOfRooms  li{
+	margin: 15px;
+	border: 1px solid black;
+	border-radius: 15px;
+	max-width: 250px;
+	max-height: 150px;
+}
+.listOfRooms  li:hover{
+	background-color: #64D133;
+}
+.listOfRooms  a{
+	font-style: oblique;
+	font-weight: bold;
+
+}
+
+
+
+
+.InputsForm {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ 
+  text-align: center;
+  padding: 10px;
+
+  broder-size: 5px;
+  border-style: groove;
+  border-colour: black;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.InputsForm input {
+
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+.InputsForm input[type=submit] {
+
+  width: 50%;
+  background-color: #64D133;
+  color: white;
+
+  padding: 14px 20px;
+  margin: 8px 0;
+
+  border: 2px outset #37AA60;
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+.InputsForm input[type=submit]:hover{
+	 border: 2px inset #37AA60;
+	 border-radius: 4px;
+}
+
+.InputsForm #desc{
+	height: 100px;
+}
+

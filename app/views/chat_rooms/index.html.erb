@@ -9,7 +9,9 @@
     <body>
     <div class="toolbar">
         <h2>MessageApp</h2>
-        <%= link_to "Logout", "sessions/destroy" %>
+        <h3>Create Room</h3>
+        <%= link_to image_tag("AddRoom.png"), "chat_rooms/new", method: :GET %>
+        
     </div>
     
     <div class="errors">
@@ -20,16 +22,17 @@
         <%end%>
     </div>
 
-      <%= link_to "Create Room" , "/chat_rooms/new" %>
+     
     <div class="listOfRooms"> 
-      <h3>Available rooms</h3>  
-
-        <% @rooms.each do |room| %>
-        	<div class="Room">
-        	   	<%= link_to room.title , "/messages/"+room.id.to_s %>
-        	</div>
-        <% end %>
-     	
+        <h1>Available rooms</h1>
+        <ul style="list-style-type:none;">
+            <% @rooms.each do |room| %>
+                <li class="Room">
+                   <h3><%= link_to room.title , "/messages/"+room.id.to_s %></h3>
+                   <span><%= room.desc%></span>
+                </li>
+            <% end %>
+        </ul>  	
     </div>
 
         

@@ -7,10 +7,6 @@ class ChatRoomsController < ApplicationController
 	def new
 
 	end
-
-	def show
-		@room = params[:id]
-	end
 	
 	def create
 		room=ChatRoom.new(room_params)

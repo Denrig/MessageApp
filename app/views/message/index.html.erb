@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-	<div id="messageList">
+
+	 <div class="toolbar">
+        <h2>MessageApp</h2>
+    </div>
+	<div class="MessageList">
 		<% @messages.each do |message| %>
-			<div class="messageBody">
-			<%= message.body %>
-			<%= message.user.email %>
+			<div class="Message">
+				
+				<div class="body">
+					<%= message.body %>
+				</div>
+				
+				<div class="sender">
+					<%= message.user.email %>
+				</div>
+				
 			</div>
+			
 		<% end %>
+
+
+			<form id="messageForm" action="<%= "/messages/"+@room %>" method="POST" data-remote="true">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="message[chat_room]" value="<%= @room %>" , placeholder="chat_room">
+    <input type="hidden" name="message[user]" value="<%= cookies[:user] %>" , placeholder="user">
+	<input id="messageBody" type="text"   name="message[body]" placeholder="body">
+	<input type="submit" name="submit" placeholder="submit">	
+	</form>
 	</div>
 
-	<%= render("form") %>
+
 	
 <body>
 </body>
