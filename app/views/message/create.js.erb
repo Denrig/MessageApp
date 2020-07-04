@@ -1,2 +1,2 @@
-$("#messageList").append("<div class=\"messageBody\"><%= j @message.body %><%= j @message.user.email %></div>")
+$(".MessageList").append("<li style=\"list-style-type:none;\" class=\"Message\"><div class=\"body\"><%= j @message.body %></div><div class=\"sender\"><%= j @message.user.email %></div></li>")
 $("#messageBody").val("")

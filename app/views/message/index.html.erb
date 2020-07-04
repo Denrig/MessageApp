@@ -8,9 +8,10 @@
 	 <div class="toolbar">
         <h2>MessageApp</h2>
     </div>
-	<div class="MessageList">
+    <div class="mainBlock">
+	<ul class="MessageList">
 		<% @messages.each do |message| %>
-			<div class="Message">
+			<li class="Message" style="list-style-type:none;">
 				
 				<div class="body">
 					<%= message.body %>
@@ -20,22 +21,19 @@
 					<%= message.user.email %>
 				</div>
 				
-			</div>
+			</li>
 			
 		<% end %>
-
-
-			<form id="messageForm" action="<%= "/messages/"+@room %>" method="POST" data-remote="true">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <input type="hidden" name="message[chat_room]" value="<%= @room %>" , placeholder="chat_room">
-    <input type="hidden" name="message[user]" value="<%= cookies[:user] %>" , placeholder="user">
-	<input id="messageBody" type="text"   name="message[body]" placeholder="body">
-	<input type="submit" name="submit" placeholder="submit">	
+	</ul>
+	<form id="messageForm" action="<%= "/messages/"+@room %>" method="POST" data-remote="true">
+    	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    	<input type="hidden" name="message[chat_room]" value="<%= @room %>" , placeholder="chat_room">
+    	<input type="hidden" name="message[user]" value="<%= cookies[:user] %>" , placeholder="user">
+		<textarea id="messageBody" cols="75" rows="3"  name="message[body]" placeholder="body"></textarea>
+		<input type="submit" name="submit" placeholder="submit" value="Send">	
 	</form>
 	</div>
-
-
 	
-<body>
+	
 </body>
 </html>

@@ -1,24 +1,52 @@
-// Place all the styles related to the Message controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
 
+.mainBlock{
+	text-align: center;
+}
 
 .MessageList {
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%, -50%);
- 
+  
+  overflow: auto;
+  width: 100%;
   text-align: center;
+  margin: 5px;
 
 }
 
+.Message {
+	position: relative;
+	border-radius: 5px;
+	border: 1px solid #666600;
+	width: 75%;
+	margin: 10px;
 
 
+}
 
 .Message .body{
-	border: 2px solid black;
-	height: 80%;
-	wigth: 100%;
+	text-align: left;
+	heigth: 75%;
+	word-wrap: break-word;
+	background-color: #ffff99;
 }
 
+.Message .sender{
+	border-top: 1px groove #e6e600;
+	heigth: 25%;
+	text-align: right;
+	background-color: #ffffe6;
+}
+
+
+#messageForm {
+	
+}
+
+
+
+
+#messageForm input{
+	position: relative;
+	top: 0%;
+	height: 50px;
+    width:50px;
+}
